@@ -1,0 +1,17 @@
+button,
+button:focus {
+  outline: none;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+button:active {
+  outline: none;
+  background: transparent;
+  border: 1px solid grey;
+}
+
+th {
+  border: 1px solid grey !important;
+  padding: 10px;
+}

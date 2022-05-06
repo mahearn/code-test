@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCompanyInfo } from './store/reducers/companySlice';
 import Header from './components/header';
 import SearchBar from './components/search-bar';
 import Summary from './components/summary';
 import Modal from 'react-modal';
-import { useSelector, useDispatch } from 'react-redux';
-import { getCompanyInfo } from './store/reducers/companySlice';
 
 import './App.css';
 

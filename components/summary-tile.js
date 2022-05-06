@@ -7,9 +7,9 @@ const SummaryTile = ({ employee }) => {
     <tr>
       <td>{id}</td>
       <td>
-        <img src={avatar} alt={`${firstName} ${lastName}'s photo`} />
+        <img src={avatar} alt='avatar' loading='lazy' />{' '}
+        {`${firstName} ${lastName}`}
       </td>
-      <td>{`${firstName} ${lastName}`}</td>
       <td>{contactNo}</td>
       <td>{address}</td>
     </tr>
