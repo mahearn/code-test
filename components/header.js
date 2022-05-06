@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { getCompanyInfo } from '../store/reducers/companySlice';
+import { formatDate } from './utils';
 
-const Header = () => {
+const Header = ({ companyInfo }) => {
   return (
     <div className='header-container'>
-      <h1>Company Name</h1>
-      <p className='motto-text'>Company Motto</p>
-      <span className='established-date'>Since (company established date)</span>
+      <h1>{companyInfo.companyName}</h1>
+      <p className='motto-text'>{companyInfo.companyMotto}</p>
+      <span className='established-date'>
+        Since {formatDate(companyInfo.companyEst)}
+      </span>
     </div>
   );
 };

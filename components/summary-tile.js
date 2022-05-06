@@ -1,12 +1,17 @@
 import React from 'react';
 
-const SummaryTile = () => {
+const SummaryTile = ({ employee }) => {
+  const { id, avatar, firstName, lastName, contactNo, address } = employee;
+
   return (
     <tr>
-      <td>1</td>
-      <td>Bill Smith</td>
-      <td>1234567890</td>
-      <td>10 test street, Testtown</td>
+      <td>{id}</td>
+      <td>
+        <img src={avatar} alt={`${firstName} ${lastName}'s photo`} />
+      </td>
+      <td>{`${firstName} ${lastName}`}</td>
+      <td>{contactNo}</td>
+      <td>{address}</td>
     </tr>
   );
 };
