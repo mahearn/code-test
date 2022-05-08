@@ -15,3 +15,52 @@ th {
   border: 1px solid grey !important;
   padding: 10px;
 }
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: whitesmoke;
+  width: 300px;
+  height: auto;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: darkgrey;
+}
+
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.modal-content {
+  position: relative;
+  padding: 15px;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.photo-content,
+.employee-details-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.name-header {
+  border-bottom: 1px solid lightgrey;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { formatDate } from './utils';
 
+import './styles/header.css';
+
 const Header = ({ companyInfo }) => {
   const { companyName, companyMotto, companyEst } = companyInfo;
 
@@ -8,7 +10,9 @@ const Header = ({ companyInfo }) => {
     <div className='header-container'>
       <h1>{companyName}</h1>
       <p className='motto-text'>{companyMotto}</p>
-      <span className='established-date'>Since {formatDate(companyEst)}</span>
+      <div className='established-date'>
+        <p className='date-text'>Since {formatDate(companyEst)}</p>
+      </div>
     </div>
   );
 };

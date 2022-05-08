@@ -1,2 +1,9 @@
 .searchbar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+form {
+  grid-column-start: 2;
+  display: flex;
 }

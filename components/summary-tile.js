@@ -1,10 +1,10 @@
 import React from 'react';
 
-const SummaryTile = ({ employee }) => {
+const SummaryTile = ({ employee, handleShowModal }) => {
   const { id, avatar, firstName, lastName, contactNo, address } = employee;
 
   return (
-    <tr>
+    <tr onClick={() => handleShowModal(employee.id)}>
       <td>{id}</td>
       <td>
         <img src={avatar} alt='avatar' loading='lazy' />{' '}

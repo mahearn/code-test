@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
   company: {},
@@ -9,25 +10,27 @@ const initialState = {
 export const getCompanyInfo = createAsyncThunk(
   'companies/getCompanyInfo',
   async (dispatch, getState) => {
-    return await fetch('sample-data.json').then((res) => res.json());
+    return await axios.get('sample-data.json');
   }
 );
 
 export const companySlice = createSlice({
   name: 'companies',
   initialState,
-  reducers: {},
   extraReducers: {
     [getCompanyInfo.pending]: (state, action) => {
       state.status = 'loading';
+      console.log(state);
     },
     [getCompanyInfo.fulfilled]: (state, action) => {
       state.status = 'success';
       state.company = action.payload;
+      console.log(state);
     },
     [getCompanyInfo.rejected]: (state, action) => {
       state.status = 'failed';
       state.error = 'Failed to get company information';
+      console.log(state);
     },
   },
 });
