@@ -24,8 +24,7 @@ th {
   bottom: auto;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  background-color: whitesmoke;
-  width: 80%;
+  width: 95%;
   height: auto;
 }
 
@@ -36,10 +35,10 @@ th {
   right: 0;
   bottom: 0;
   background-color: darkgrey;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
-.modal-close {
+.modal-button {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -48,23 +47,41 @@ th {
 .modal-content {
   position: relative;
   padding: 15px;
-  z-index: 20;
-  background-color: beige;
-  opacity: 1;
 }
 
 .content-wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  margin-top: 20px;
 }
 
-.photo-content,
-.employee-details-text {
+.photo-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
+}
+
+.image-label-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
+.employee-details-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .name-header {
   border-bottom: 1px solid lightgrey;
+}
+
+@media screen and (min-width: 679px) {
+  .Modal {
+    width: 600px;
+  }
 }

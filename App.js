@@ -17,7 +17,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className='container container-border'>
+    <div className='container'>
       <Header companyInfo={companyInfo} />
       <SearchBar />
       <Summary employees={employees} />

@@ -70,7 +70,7 @@ const Summary = ({ employees }) => {
         appElement={document.getElementById('root')}
       >
         <div className='modal-content'>
-          <button className='modal-close' onClick={closeModal}>
+          <button className='modal-button' onClick={closeModal}>
             X
           </button>
           {Object.keys(emp).length > 0 && (
@@ -82,10 +82,10 @@ const Summary = ({ employees }) => {
                     alt={`${emp.firstName} ${emp.lastName}`}
                   />
                 </div>
-                <div className=''>
+                <div className='image-label-text'>
                   <span>{emp.jobTitle}</span>
                   <span>{emp.age}</span>
-                  <span>{emp.dateJoined}</span>
+                  <span>{formatDate(emp.dateJoined)}</span>
                 </div>
               </div>
               <div className='employee-details-text'>
