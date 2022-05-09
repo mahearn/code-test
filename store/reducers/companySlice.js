@@ -1,17 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+//having problems getting the json file with xhr call, so just importing it here for practical purposes dev only
+import companyData from '../../sample-data.json';
 
 const initialState = {
-  company: {},
+  company: companyData,
   status: 'idle',
   error: '',
 };
 
 export const getCompanyInfo = createAsyncThunk(
   'companies/getCompanyInfo',
-  async (dispatch, getState) => {
-    return await axios.get('sample-data.json');
-  }
+  companyData
 );
 
 export const companySlice = createSlice({

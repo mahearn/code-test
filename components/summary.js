@@ -9,12 +9,13 @@ import './styles/summary.css';
 
 const Summary = ({ employees }) => {
   const [showModal, setShowModal] = useState();
-  const [emp, setEmp] = useState();
+  const [emp, setEmp] = useState({});
 
   function handleShowModal(id) {
-    let selectedEmployee = employees.filter((e) => e.id === id);
+    let selectedEmp = employees.filter((e) => e.id === id);
+    let selectedEmpObj = Object.assign({}, ...selectedEmp);
     setShowModal(true);
-    setEmp(selectedEmployee);
+    setEmp(selectedEmpObj);
   }
 
   function closeModal() {
@@ -66,32 +67,35 @@ const Summary = ({ employees }) => {
         className='Modal'
         overlayClassName='Overlay'
         contentLabel='Employee Detail Modal'
+        appElement={document.getElementById('root')}
       >
         <div className='modal-content'>
           <button className='modal-close' onClick={closeModal}>
             X
           </button>
-          <div className='content-wrapper'>
-            <div className='photo-content'>
-              <div className='emp-photo'>
-                <img
-                  src={emp.avatar}
-                  alt={`${emp.firstName} ${emp.lastName}`}
-                />
+          {Object.keys(emp).length > 0 && (
+            <div className='content-wrapper'>
+              <div className='photo-content'>
+                <div className='emp-photo'>
+                  <img
+                    src={emp.avatar}
+                    alt={`${emp.firstName} ${emp.lastName}`}
+                  />
+                </div>
+                <div className=''>
+                  <span>{emp.jobTitle}</span>
+                  <span>{emp.age}</span>
+                  <span>{emp.dateJoined}</span>
+                </div>
               </div>
-              <div>
-                <span>{emp.jobTitle}</span>
-                <span>{emp.age}</span>
-                <span>{emp.dateJoined}</span>
+              <div className='employee-details-text'>
+                <h4 className='name-header'>
+                  {emp.firstName} {emp.lastName}
+                </h4>
+                <p>{emp.bio}</p>
               </div>
             </div>
-            <div className='employee-details-text'>
-              <h4 className='name-header'>
-                {emp.firstName} {emp.lastName}
-              </h4>
-              <p>{emp.bio}</p>
-            </div>
-          </div>
+          )}
         </div>
       </Modal>
     </div>

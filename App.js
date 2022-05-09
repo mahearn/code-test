@@ -20,7 +20,7 @@ const App = () => {
     <div className='container container-border'>
       <Header companyInfo={companyInfo} />
       <SearchBar />
-      {/* <Summary employees={employees} /> */}
+      <Summary employees={employees} />
     </div>
   );
 };
